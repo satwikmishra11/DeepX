@@ -1,0 +1,8 @@
+holidays = pd.DataFrame({
+    'Date': pd.to_datetime(['2011-12-25', '2011-12-26', '2012-01-01', '2011-04-22', '2011-08-29']),
+    'HolidayName': ['Christmas', 'Boxing Day', 'New Year', 'Good Friday', 'Summer Bank Holiday'],
+    'Country': 'United Kingdom',
+    'IsPublicHoliday': 1
+})
+
+holiday_calendar.to_csv('holiday_calendar.csv', index=False)
