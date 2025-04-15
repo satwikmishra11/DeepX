@@ -1,0 +1,16 @@
+# Get unique customers
+customers = train['CustomerID'].dropna().unique()
+
+# Generate synthetic customer data
+customer_data = {
+    'Location': np.random.choice(['London', 'Manchester', 'Birmingham', 'Leeds'], len(customers)),
+    'MembershipTier': np.random.choice(['Basic', 'Silver', 'Gold'], len(customers), p=[0.6, 0.3, 0.1]),
+    'AvgPurchaseFrequency': np.random.randint(1, 30, len(customers))
+}
+
+customer_details = pd.DataFrame({
+    'CustomerID': customers,
+    **customer_data
+})
+
+customer_details.to_csv('customer_details.csv', index=False)
