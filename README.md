@@ -1,13 +1,12 @@
 # DeepX
 # Retail Demand Forecasting for Kirana Stores 
 
-A comprehensive solution for predicting product demand in small retail (Kirana) stores, optimized for hackathon judging criteria.
+A comprehensive solution for predicting product demand in small retail (Kirana) stores.
 
 ##  Features
 - **Hybrid Forecasting**: SARIMA + XGBoost ensemble model
 - **Explainable AI**: SHAP values for feature importance
 - **End-to-End Pipeline**: From EDA to production-ready forecasts
-- **Hackathon-Optimized**: Directly addresses all 5 scoring criteria
 
 ##  Repository Structure
 .
@@ -20,8 +19,6 @@ A comprehensive solution for predicting product demand in small retail (Kirana) 
 │ ├── EDA.ipynb # Exploratory analysis
 │ └── Forecasting.ipynb # Model training/predictions
 └── README.md # You are here
-
-Copy
 
 ## Installation
 ```bash
