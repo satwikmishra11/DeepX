@@ -1,0 +1,22 @@
+import pandas as pd
+import numpy as np
+
+# Load training data to infer patterns
+train = pd.read_csv('kiranaRO_train.csv', parse_dates=['InvoiceDate'])
+
+# Generate test data (next 30 days after last training date)
+last_date = train['InvoiceDate'].max()
+future_dates = pd.date_range(start=last_date + pd.Timedelta(days=1), periods=30, freq='D')
+
+# Get top 20 frequently sold items
+top_items = train['StockCode'].value_counts().head(20).index.tolist()
+
+# Create test DataFrame
+test = pd.DataFrame({
+    'InvoiceDate': np.repeat(future_dates, len(top_items)),
+    'StockCode': np.tile(top_items, len(future_dates)),
+    'StoreID': 'STORE_001',  # Single store for simplicity
+    'Country': 'United Kingdom'
+})
+
+test.to_csv('kiranaRO_test.csv', index=False)
