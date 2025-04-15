@@ -1,0 +1,15 @@
+# Get unique products from training data
+products = train[['StockCode', 'Description']].drop_duplicates()
+
+# Add synthetic features
+np.random.seed(42)
+product_data = {
+    'Category': np.random.choice(['Kitchen', 'Decor', 'Stationery', 'Toys', 'Food'], len(products)),
+    'Brand': np.random.choice(['RetroSpot', 'VintageCo', 'HomeCraft', 'EcoLiving'], len(products)),
+    'ShelfLife': np.random.randint(30, 365, len(products)),
+    'Supplier': np.random.choice(['Supplier_A', 'Supplier_B', 'Supplier_C'], len(products))
+}
+
+product_catalog = pd.DataFrame(product_data)
+product_catalog = pd.concat([products.reset_index(drop=True), product_catalog], axis=1)
+product_catalog.to_csv('product_catalog.csv', index=False)
