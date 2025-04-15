@@ -1,0 +1,11 @@
+# Create date range matching training data
+dates = pd.date_range(start=train['InvoiceDate'].min(), end=train['InvoiceDate'].max())
+
+weather = pd.DataFrame({
+    'Date': dates,
+    'Temperature': np.random.randint(5, 25, len(dates)),
+    'Rainfall': np.random.choice([0, 0.5, 2.5, 5], len(dates), p=[0.6, 0.2, 0.15, 0.05]),
+    'Country': 'United Kingdom'
+})
+
+weather.to_csv('weather_data.csv', index=False)
