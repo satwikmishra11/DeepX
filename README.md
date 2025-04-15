@@ -1,5 +1,5 @@
 # DeepX
-# Retail Demand Forecasting for Kirana Stores 🛒📈
+# Retail Demand Forecasting for Kirana Stores 
 
 A comprehensive solution for predicting product demand in small retail (Kirana) stores, optimized for hackathon judging criteria.
 
