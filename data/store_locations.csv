@@ -1,0 +1,8 @@
+store_locations = pd.DataFrame({
+    'StoreID': ['STORE_001', 'STORE_002', 'STORE_003'],
+    'Region': ['South', 'North', 'Midlands'],
+    'StoreSize': ['Large', 'Medium', 'Small'],
+    'FootTraffic': [1500, 800, 500]  # Daily average foot traffic
+})
+
+store_locations.to_csv('store_locations.csv', index=False)
