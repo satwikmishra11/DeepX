@@ -1,0 +1,11 @@
+# Select random products for promotions
+promo_items = np.random.choice(product_catalog['StockCode'], 15)
+
+promotions = pd.DataFrame({
+    'StockCode': promo_items,
+    'StartDate': pd.date_range(start='2011-09-01', periods=15, freq='W'),
+    'EndDate': pd.date_range(start='2011-09-08', periods=15, freq='W'),
+    'DiscountPercentage': np.random.randint(10, 40, 15)
+})
+
+promotions.to_csv('promotions.csv', index=False)
